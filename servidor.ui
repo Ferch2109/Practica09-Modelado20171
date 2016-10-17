@@ -2,19 +2,28 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>951</width>
-    <height>807</height>
+    <width>955</width>
+    <height>789</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>1</horstretch>
+    <verstretch>1</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
   </property>
   <property name="sizeIncrement">
    <size>
@@ -30,7 +39,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -39,7 +48,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-10</y>
+      <y>0</y>
       <width>951</width>
       <height>761</height>
      </rect>
@@ -51,7 +60,7 @@
      <item>
       <widget class="QWidget" name="widget_3" native="true">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -60,16 +69,46 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>202</y>
+          <y>190</y>
           <width>911</width>
-          <height>531</height>
+          <height>561</height>
          </rect>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <layout class="QVBoxLayout" name="tabla_boton">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMaximumSize</enum>
+         </property>
          <item>
-          <widget class="QTableWidget" name="table">
+          <widget class="QPushButton" name="terminar_juego">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: white;
+border: 1px;
+border-color: white;
+border-style : solid;
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.490909 rgba(12, 12, 12, 255), stop:1 rgba(0, 0, 0, 255));</string>
+           </property>
+           <property name="text">
+            <string>INICIAR JUEGO</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="tabla">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>1</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
@@ -345,10 +384,19 @@ border-color: rgb(219, 111, 255);</string>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMaximumSize</enum>
+         </property>
          <item>
           <widget class="QGroupBox" name="groupBox_10">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #FFFFFF;
@@ -376,11 +424,16 @@ padding:5px;</string>
               <height>171</height>
              </rect>
             </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: #FFFFFF;
 border:0px;
 padding:5px;
-z-index:999;
 background:rgb(0,0,0,0)</string>
             </property>
             <property name="toolTipDuration" stdset="0">
@@ -390,10 +443,16 @@ background:rgb(0,0,0,0)</string>
              <property name="fieldGrowthPolicy">
               <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
              </property>
-             <item row="1" column="0">
+             <item row="2" column="0">
               <widget class="QLabel" name="label_28">
                <property name="enabled">
                 <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
                <property name="styleSheet">
                 <string notr="true">color: #FFFFFF;
@@ -411,54 +470,8 @@ background : rgb(0,0,0,0)</string>
                </property>
               </widget>
              </item>
-             <item row="1" column="1">
-              <widget class="QSlider" name="filas_3">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color: #FFFFFF;
-border:0px;
-padding:5px;
-background:rgb(0,0,0,0)</string>
-               </property>
-               <property name="minimum">
-                <number>20</number>
-               </property>
-               <property name="maximum">
-                <number>500</number>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="toolTipDuration" stdset="0">
-                <number>-1</number>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="label_29">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color: #FFFFFF;
-border:0px;
-border-radius:5px;
-padding:5px;
-z-index:999;
-background : rgb(0,0,0,0)</string>
-               </property>
-               <property name="text">
-                <string>Filas</string>
-               </property>
-               <property name="toolTipDuration" stdset="0">
-                <number>-1</number>
-               </property>
-              </widget>
-             </item>
              <item row="2" column="1">
-              <widget class="QSlider" name="columnas_4">
+              <widget class="QSlider" name="columnas">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -483,14 +496,60 @@ background:rgb(0,0,0,0)</string>
               </widget>
              </item>
              <item row="3" column="0">
+              <widget class="QLabel" name="label_29">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #FFFFFF;
+border:0px;
+border-radius:5px;
+padding:5px;
+z-index:999;
+background : rgb(0,0,0,0)</string>
+               </property>
+               <property name="text">
+                <string>Filas</string>
+               </property>
+               <property name="toolTipDuration" stdset="0">
+                <number>-1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSlider" name="filas">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #FFFFFF;
+border:0px;
+padding:5px;
+background:rgb(0,0,0,0)</string>
+               </property>
+               <property name="minimum">
+                <number>20</number>
+               </property>
+               <property name="maximum">
+                <number>500</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="toolTipDuration" stdset="0">
+                <number>-1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
               <widget class="QLabel" name="label_4">
                <property name="text">
                 <string>Espera (ms)</string>
                </property>
               </widget>
              </item>
-             <item row="3" column="1">
-              <widget class="QSlider" name="columnas_5">
+             <item row="4" column="1">
+              <widget class="QSlider" name="espera">
                <property name="enabled">
                 <bool>true</bool>
                </property>
@@ -514,10 +573,16 @@ background:rgb(0,0,0,0)</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="1">
+             <item row="1" column="0" colspan="2">
               <widget class="QLabel" name="label_30">
                <property name="enabled">
                 <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
                <property name="styleSheet">
                 <string notr="true">color: #FFFFFF;
@@ -529,6 +594,9 @@ background : (0,0,0,0)</string>
                </property>
                <property name="text">
                 <string>Configuracióndel juego</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
                <property name="toolTipDuration" stdset="0">
                 <number>-1</number>
@@ -543,6 +611,12 @@ background : (0,0,0,0)</string>
           <widget class="QGroupBox" name="groupBox_9">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #FFFFFF;
@@ -567,6 +641,12 @@ padding:5px;</string>
               <height>161</height>
              </rect>
             </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">border:0px;
 background-color: rgb(0,0,0,0)</string>
@@ -579,6 +659,15 @@ background-color: rgb(0,0,0,0)</string>
               <widget class="QLabel" name="label_27">
                <property name="enabled">
                 <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true">color: #FFFFFF;
@@ -620,15 +709,12 @@ background:rgb(0,0,0,0)
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="url_s_2">
+              <widget class="QLineEdit" name="url">
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
                <property name="styleSheet">
-                <string notr="true">color: #FFFFFF;
-border:1px;
-border-color:#fff;
-boder-style:solid;
-border-radius:5px;
-padding:5px;
-background:rgb(0,0,0,0)</string>
+                <string notr="true">background:white;</string>
                </property>
                <property name="text">
                 <string/>
@@ -656,9 +742,15 @@ background:rgb(0,0,0,0)
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QSpinBox" name="puerto_s_2">
+              <widget class="QSpinBox" name="puerto">
                <property name="enabled">
                 <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
                <property name="styleSheet">
                 <string notr="true">color: #FFFFFF;
@@ -675,9 +767,18 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
               </widget>
              </item>
              <item row="4" column="0">
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="ping">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="styleSheet">
                 <string notr="true">color: white;
+border: 1px;
+border-color: white;
+border-style : solid;
 border-radius:10px;
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.490909 rgba(12, 12, 12, 255), stop:1 rgba(0, 0, 0, 255));</string>
                </property>
@@ -687,9 +788,20 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
               </widget>
              </item>
              <item row="4" column="1">
-              <widget class="QPushButton" name="levantar_servidor_2">
+              <widget class="QPushButton" name="participar">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="styleSheet">
-                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.490909 rgba(12, 12, 12, 255), stop:1 rgba(0, 0, 0, 255));</string>
+                <string notr="true">color: white;
+border: 1px;
+border-color: white;
+border-style : solid;
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.490909 rgba(12, 12, 12, 255), stop:1 rgba(0, 0, 0, 255));</string>
                </property>
                <property name="text">
                 <string>Participar</string>
@@ -712,7 +824,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>951</width>
+     <width>955</width>
      <height>28</height>
     </rect>
    </property>
@@ -723,15 +835,6 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
    </widget>
    <addaction name="menuSnake"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
