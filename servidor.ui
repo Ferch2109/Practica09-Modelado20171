@@ -79,25 +79,50 @@
           <enum>QLayout::SetMaximumSize</enum>
          </property>
          <item>
-          <widget class="QPushButton" name="terminar_juego">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: white;
+          <layout class="QHBoxLayout" name="botones_estado">
+           <item>
+            <widget class="QPushButton" name="estado_juego">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
 border: 1px;
 border-color: white;
 border-style : solid;
 border-radius:10px;
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.490909 rgba(12, 12, 12, 255), stop:1 rgba(0, 0, 0, 255));</string>
-           </property>
-           <property name="text">
-            <string>INICIAR JUEGO</string>
-           </property>
-          </widget>
+             </property>
+             <property name="text">
+              <string>INICIAR JUEGO</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="termina_juego">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+border: 1px;
+border-color: white;
+border-style : solid;
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.490909 rgba(12, 12, 12, 255), stop:1 rgba(0, 0, 0, 255));</string>
+             </property>
+             <property name="text">
+              <string>TERMINAR JUEGO</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QTableWidget" name="tabla">

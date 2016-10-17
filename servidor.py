@@ -15,7 +15,8 @@ class Dir(Enum):
 class Estado(Enum):
 	EN_MARCHA = 5
 	PAUSADO = 6
-	NINGUNO = 7
+	REANUDAR = 7
+	NINGUNO = 8
 
 class Servidor(QtGui.QMainWindow):
 
@@ -25,7 +26,9 @@ class Servidor(QtGui.QMainWindow):
 		self.redimensionar()
 		self.poner_lienzo_celdas()
 		self.clickers()
-		self.estado = Estado.NINGUNO
+		self.termina_juego.hide()
+		self.estado = Estado.EN_MARCHA
+		self.timer = None
     	#self.principal.setWidgetResizable(True)
 
 
@@ -35,7 +38,7 @@ class Servidor(QtGui.QMainWindow):
 
 
 	def poner_lienzo_celdas( self ):
-		self.tabla.setSelectionMode(QtGui.QTableWidget.NoSelection) 
+		self.tabla.setSelectionMode(QtGui.QTableWidget.NoSelection)
 		for i in range( self.tabla.rowCount() ) :
 			for j in range( self.tabla.columnCount() ) :
 				self.tabla.setItem( i, j, QtGui.QTableWidgetItem() )
@@ -45,7 +48,21 @@ class Servidor(QtGui.QMainWindow):
 	def clickers( self ):
 		self.columnas.valueChanged.connect( self.cambio_numero_celdas )
 		self.filas.valueChanged.connect( self.cambio_numero_celdas )
-		#self.espera.valueChanged.connect(self.actualizar_espera)
+		self.espera.valueChanged.connect( self.actualizar_espera )
+		self.estado_juego.clicked.connect( self.estado_del_juego )
+		self.termina_juego.clicked.connect( self.terminar_juego )
+
+
+	def estado_del_juego( self ):
+		if self.estado == Estado.EN_MARCHA:
+			self.iniciar_juego()
+			self.estado = Estado.PAUSADO
+		elif self.estado == Estado.PAUSADO:
+			self.pausar_juego()
+			self.estado = Estado.REANUDAR
+		else:
+			self.reanudar_juego()
+			self.estado = Estado.PAUSADO
 
 
 	def cambio_numero_celdas( self ):
@@ -55,6 +72,31 @@ class Servidor(QtGui.QMainWindow):
 		self.tabla.setColumnCount(columnas)
 		self.poner_lienzo_celdas()
 		self.redimensionar()
+
+
+	def actualizar_espera( self ):
+		mili_seg = self.espera.value()
+		self.timer.setInterval(mili_seg)
+
+
+	def iniciar_juego( self ):
+		self.termina_juego.show()
+		self.estado_juego.setText( "PAUSAR JUEGO" )
+	
+
+	def pausar_juego( self ):
+		self.estado_juego.setText( "REANUDAR JUEGO" )
+	
+
+	def reanudar_juego( self ):
+		self.estado_juego.setText( "PAUSAR JUEGO" )
+
+
+
+	def terminar_juego( self ):
+		self.termina_juego.hide()
+		self.estado_juego.setText( "INICIAR JUEGO" )
+
 
 
 class Snake():
