@@ -95,6 +95,7 @@ class Servidor(QtGui.QMainWindow):
 
 	def terminar_juego( self ):
 		self.termina_juego.hide()
+		self.estado = Estado.EN_MARCHA
 		self.estado_juego.setText( "INICIAR JUEGO" )
 
 
