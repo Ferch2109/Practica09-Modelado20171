@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import sys
+import sys, random
 from PyQt4 import QtGui, QtCore, uic
 from enum import Enum
 
@@ -199,7 +199,7 @@ class Snake():
 		self.cuerpo_snake = [[0,0],[1,0],[2,0],[3,0],[4,0]]
 		self.tamanio = len( self.cuerpo_snake )
 		self.direccion = Dir.ABAJO
-		self.R, self.G, self.B = map( int, colores_bonis().split() )
+		self.R, self.G, self.B = map( int, colores_bonis().split(" ") )
 
 
 	def pintate_de_colores( self, tabla ):
@@ -207,30 +207,12 @@ class Snake():
 				tabla.item( cachito_snake_bb[0], cachito_snake_bb[1] ).setBackground( QtGui.QColor( self.R, self.G, self.B ) )
 
 
-
-R = 40
-G = 200
-B = 100
-
 def colores_bonis():
-	global R
-	global G
-	global B
+	R=G=B=0
 	
-	if R <= 255:
-		R += 10
-	
-	if R > 255 and G < 255:
-		G += 10
-	
-	if G > 255 and B < 255:
-		B += 10
-
-	if B > 255:
-		R = 0
-		G = 0
-		B = 0
-
+	R = random.randint( 10, 255 )
+	G = random.randint( 10, 255 )
+	B = random.randint( 10, 255 )
 	return str(R)+" "+str(G)+" "+str(B)
 
 
