@@ -47,10 +47,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-8</x>
       <y>0</y>
-      <width>951</width>
-      <height>761</height>
+      <width>961</width>
+      <height>751</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="principal" stretch="0">
@@ -130,9 +130,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
             <bool>true</bool>
            </property>
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>1</horstretch>
-             <verstretch>1</verstretch>
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
@@ -145,8 +145,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
             <bool>false</bool>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);
-border-color: rgb(219, 111, 255);</string>
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -176,7 +175,10 @@ border-color: rgb(219, 111, 255);</string>
             <bool>true</bool>
            </property>
            <property name="rowCount">
-            <number>17</number>
+            <number>10</number>
+           </property>
+           <property name="columnCount">
+            <number>10</number>
            </property>
            <attribute name="horizontalHeaderVisible">
             <bool>false</bool>
@@ -188,6 +190,9 @@ border-color: rgb(219, 111, 255);</string>
             <bool>false</bool>
            </attribute>
            <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
             <bool>false</bool>
            </attribute>
            <attribute name="verticalHeaderVisible">
@@ -202,6 +207,9 @@ border-color: rgb(219, 111, 255);</string>
            <attribute name="verticalHeaderShowSortIndicator" stdset="0">
             <bool>false</bool>
            </attribute>
+           <attribute name="verticalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
            <row>
             <property name="text">
              <string/>
@@ -252,76 +260,6 @@ border-color: rgb(219, 111, 255);</string>
              <string/>
             </property>
            </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string/>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string/>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string/>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string/>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string/>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string/>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string/>
-            </property>
-           </column>
            <column>
             <property name="text">
              <string/>
@@ -484,7 +422,6 @@ background:rgb(0,0,0,0)</string>
 border:0px;
 border-radius:5px;
 padding:5px;
-z-index:999;
 background : rgb(0,0,0,0)</string>
                </property>
                <property name="text">
@@ -530,7 +467,6 @@ background:rgb(0,0,0,0)</string>
 border:0px;
 border-radius:5px;
 padding:5px;
-z-index:999;
 background : rgb(0,0,0,0)</string>
                </property>
                <property name="text">
@@ -614,7 +550,6 @@ background:rgb(0,0,0,0)</string>
 border:0px;
 border-radius:5px;
 padding:5px;
-z-index:999;
 background : (0,0,0,0)</string>
                </property>
                <property name="text">
@@ -699,7 +634,6 @@ background-color: rgb(0,0,0,0)</string>
 border:0px;
 border-radius:5px;
 padding:5px;
-z-index:999;
 background : (0,0,0,0)</string>
                </property>
                <property name="text">
