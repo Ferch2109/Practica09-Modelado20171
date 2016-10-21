@@ -3,6 +3,7 @@
 import sys, random
 from PyQt4 import QtGui, QtCore, uic
 from enum import Enum
+from xmlrpc.server import SimpleXMLRPCServer
 
 MainWindowUI, MainWindowBase = uic.loadUiType("servidor.ui")
 
@@ -192,6 +193,8 @@ class Servidor(QtGui.QMainWindow):
 		self.dibuja_snakes_bebes()
 
 
+	def conexion( self ):
+		servidor = SimpleXMLRPCServer( ( "localhost", self.puerto ) )
 
 
 class Snake():
